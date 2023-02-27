@@ -1,0 +1,17 @@
+version: '3'
+services:
+  jupyter-tensorflow:
+    image: jupyter/tensorflow-notebook
+    build:
+        context: .
+        dockerfile: Dockerfile
+    container_name: jupyter-tensorflow
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    volumes:
+      - ${PWD}/microai_edu:/home/jovyan/test
+volumes:
+  ext_files:
+    external: true
