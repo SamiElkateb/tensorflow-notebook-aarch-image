@@ -1,3 +1,4 @@
+# microai_edu and Dockerfile must be in the same folder as docker-compose.yml
 version: '3'
 services:
   jupyter-tensorflow:
@@ -12,6 +13,4 @@ services:
       - JUPYTER_ENABLE_LAB=yes
     volumes:
       - ${PWD}/microai_edu:/home/jovyan/test
-volumes:
-  ext_files:
-    external: true
+
